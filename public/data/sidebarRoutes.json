@@ -1,0 +1,21 @@
+{
+  "menuItems": [
+    {
+      "icon": "dashboard",
+      "label": "Dashboard",
+      "route": "/"
+    },
+    {
+      "icon": "entities",
+      "label": "Manage Entities",
+      "route": "/entities"
+    },
+    {
+      "icon": "table",
+      "label": "Custom Entities",
+      "route": "#",
+      "children": [
+      ]
+    }
+  ]
+}

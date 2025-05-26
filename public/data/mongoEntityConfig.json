@@ -1,0 +1,1271 @@
+{
+    "entities": {
+      "Employees": {
+        "attributes": [
+          {
+            "name": "Username",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {"required": true}
+          },
+          {
+            "name": "Email",
+            "inputType": "email",
+            "dataType": "string",
+            "validations": {"required": true, "email": true}
+          },
+          {
+            "name": "Password",
+            "inputType": "password",
+            "dataType": "string",
+            "validations": {"required": true}
+          },
+          {
+            "name": "First_name",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {}
+          },
+          {
+            "name": "Last_name",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {}
+          },
+          {
+            "name": "User-role",
+            "inputType": "select",
+            "dataType": "array",
+            "options": [
+              {"value": "admin", "label": "Admin"},
+              {"value": "editor", "label": "Editor"},
+              {"value": "viewer", "label": "Viewer"}
+            ],
+            "validations": {"required": true}
+          },
+          {
+            "name": "User-status",
+            "inputType": "select",
+            "dataType": "array",
+            "options": [
+              {"value": "active", "label": "Active"},
+              {"value": "inactive", "label": "Inactive"},
+              {"value": "banned", "label": "Banned"}
+            ],
+            "validations": {"required": true}
+          },
+          {
+            "name": "Address1",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {}
+          },
+          {
+            "name": "Address2",
+            "inputType": "text",
+            "dataType": "string", 
+            "validations": {}
+          },
+          {
+            "name": "Zip_code",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {
+              "required": true,
+              "matches": "^[a-zA-Z0-9]{1,9}$"
+            }
+          },
+          {
+            "name": "Bio",
+            "inputType": "textarea",
+            "dataType": "string",
+            "validations": {}
+          }
+        ]
+      },
+      "Customer": {
+        "attributes": [
+          {
+            "name": "First_name",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {"required": true}
+          },
+          {
+            "name": "Last_name",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {"required": true}
+          },
+          {
+            "name": "Email",
+            "inputType": "email",
+            "dataType": "string",
+            "validations": {"required": true, "email": true}
+          },
+          {
+            "name": "Password",
+            "inputType": "password",
+            "dataType": "string",
+            "validations": {"required": true}
+          },
+          {
+            "name": "Address",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {"required": true}
+          }
+        ]
+      },
+      "Products": {
+        "attributes": [
+          {
+            "name": "Name",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {"required": true}
+          },
+          {
+            "name": "Description",
+            "inputType": "textarea",
+            "dataType": "string",
+            "validations": {}
+          },
+          {
+            "name": "Base_price",
+            "inputType": "number",
+            "dataType": "decimal128",
+            "validations": {
+              "required": true,
+              "min": 0
+            }
+          },
+          {
+            "name": "Sales_price",
+            "inputType": "number",
+            "dataType": "decimal128",
+            "validations": {
+              "min": 0
+            }
+          },
+          {
+            "name": "Bundle_price",
+            "inputType": "number",
+            "dataType": "decimal128",
+            "validations": {
+              "min": 0
+            }
+          },
+          {
+            "name": "Activation_date",
+            "inputType": "date",
+            "dataType": "date",
+            "validations": {}
+          },
+          {
+            "name": "Product-status",
+            "inputType": "select",
+            "dataType": "array",
+            "options": [
+              {"value": "ACTIVE", "label": "Active"},
+              {"value": "INACTIVE", "label": "Inactive"},
+              {"value": "DISCONTINUED", "label": "Discontinued"}
+            ],
+            "validations": {"required": true}
+          },
+          {
+            "name": "Product-type",
+            "inputType": "select",
+            "dataType": "array",
+            "options": [
+              {"value": "PHYSICAL", "label": "Physical"},
+              {"value": "DIGITAL", "label": "Digital"},
+              {"value": "SERVICE", "label": "Service"}
+            ],
+            "validations": {"required": true}
+          },
+          {
+            "name": "Quantity",
+            "inputType": "number",
+            "dataType": "number",
+            "defaultValue": 1,
+            "validations": {
+              "required": true,
+              "min": 0
+            }
+          }
+        ]
+      },
+      "Pages": {
+        "attributes": [
+          {
+            "name": "Title",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {"required": true}
+          },
+          {
+            "name": "Slug",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {"required": true}
+          },
+          {
+            "name": "Content",
+            "inputType": "textarea",
+            "dataType": "string",
+            "validations": {"required": true}
+          },
+          {
+            "name": "Pages-status",
+            "inputType": "select",
+            "dataType": "array",
+            "options": [
+              {"value": "DRAFT", "label": "Draft"},
+              {"value": "PUBLISHED", "label": "Published"},
+              {"value": "ARCHIVED", "label": "Archived"}
+            ],
+            "validations": {"required": true}
+          }
+        ]
+      },
+      "Posts": {
+        "attributes": [
+          {
+            "name": "Title",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {"required": true}
+          },
+          {
+            "name": "Slug",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {"required": true}
+          },
+          {
+            "name": "Content",
+            "inputType": "textarea",
+            "dataType": "string",
+            "validations": {"required": true}
+          },
+          {
+            "name": "Posts-status",
+            "inputType": "select",
+            "dataType": "array",
+            "options": [
+              {"value": "DRAFT", "label": "Draft"},
+              {"value": "PUBLISHED", "label": "Published"},
+              {"value": "ARCHIVED", "label": "Archived"}
+            ],
+            "validations": {"required": true}
+          }
+        ]
+      },
+      "Orders": {
+        "attributes": [
+          {
+            "name": "Order_number",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {"required": true}
+          },
+          {
+            "name": "Total_amount",
+            "inputType": "number",
+            "dataType": "decimal128",
+            "validations": {
+              "required": true,
+              "min": 0
+            }
+          },
+          {
+            "name": "Order-status",
+            "inputType": "select",
+            "dataType": "array",
+            "options": [
+              {"value": "PENDING", "label": "Pending"},
+              {"value": "PROCESSING", "label": "Processing"},
+              {"value": "SHIPPED", "label": "Shipped"},
+              {"value": "DELIVERED", "label": "Delivered"},
+              {"value": "CANCELLED", "label": "Cancelled"}
+            ],
+            "validations": {"required": true}
+          },
+          {
+            "name": "Shipping_address",
+            "inputType": "textarea",
+            "dataType": "string",
+            "validations": {"required": true}
+          }
+        ]
+      },
+      "OrderItems": {
+        "attributes": [
+          {
+            "name": "Quantity",
+            "inputType": "number",
+            "dataType": "number",
+            "validations": {
+              "required": true,
+              "min": 1
+            }
+          },
+          {
+            "name": "Unit_price",
+            "inputType": "number",
+            "dataType": "decimal128",
+            "validations": {
+              "required": true,
+              "min": 0
+            }
+          },
+          {
+            "name": "Subtotal",
+            "inputType": "number",
+            "dataType": "decimal128",
+            "validations": {
+              "required": true,
+              "min": 0
+            }
+          }
+        ]
+      },
+      "Brands": {
+        "attributes": [
+          {
+            "name": "Name",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {"required": true}
+          },
+          {
+            "name": "Description",
+            "inputType": "textarea",
+            "dataType": "string",
+            "validations": {}
+          },
+          {
+            "name": "Logo_url",
+            "inputType": "url",
+            "dataType": "string",
+            "validations": {"url": true}
+          },
+
+          {
+            "name": "Brand-status",
+            "inputType": "select",
+            "dataType": "array",
+            "options": [
+              {"value": "ACTIVE", "label": "Active"},
+              {"value": "INACTIVE", "label": "Inactive"}
+            ],
+            "validations": {"required": true}
+          }
+        ]
+      },
+      "Suppliers": {
+        "attributes": [
+          {
+            "name": "Company_name",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {"required": true}
+          },
+          {
+            "name": "Contact_name",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {"required": true}
+          },
+          {
+            "name": "Email",
+            "inputType": "email",
+            "dataType": "string",
+            "validations": {
+              "required": true,
+              "email": true
+            }
+          },
+          {
+            "name": "Address",
+            "inputType": "textarea",
+            "dataType": "string",
+            "validations": {}
+          },
+          {
+            "name": "Supplier-status",
+            "inputType": "select",
+            "dataType": "array",
+            "options": [
+              {"value": "ACTIVE", "label": "Active"},
+              {"value": "INACTIVE", "label": "Inactive"}
+            ],
+            "validations": {"required": true}
+          }
+        ]
+      },
+      "ProductVariants": {
+        "attributes": [
+          {
+            "name": "Sku",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {"required": true}
+          },
+          {
+            "name": "Variant_name",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {"required": true}
+          },
+          {
+            "name": "Price",
+            "inputType": "number",
+            "dataType": "decimal128",
+            "validations": {
+              "required": true,
+              "min": 0
+            }
+          },
+          {
+            "name": "Stock_quantity",
+            "inputType": "number",
+            "dataType": "number",
+            "validations": {
+              "required": true,
+              "min": 0
+            }
+          },
+          {
+            "name": "Color",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {}
+          },
+          {
+            "name": "Size",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {}
+          },
+          {
+            "name": "Weight",
+            "inputType": "number",
+            "dataType": "decimal128",
+            "validations": {"min": 0}
+          },
+          {
+            "name": "Variant-status",
+            "inputType": "select",
+            "dataType": "array",
+            "options": [
+              {"value": "ACTIVE", "label": "Active"},
+              {"value": "INACTIVE", "label": "Inactive"},
+              {"value": "OUT_OF_STOCK", "label": "Out of Stock"}
+            ],
+            "validations": {"required": true}
+          }
+        ]
+      },
+      "Settings": {
+        "attributes": [
+          {
+            "name": "Site_name",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {"required": true}
+          },
+          {
+            "name": "Email_host",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {}
+          },
+          {
+            "name": "Email_port",
+            "inputType": "number",
+            "dataType": "number",
+            "validations": {"required": true}
+          }
+        ]
+      },
+      "Logs": {
+        "attributes": [
+          {
+            "name": "Settings-level",
+            "inputType": "select",
+            "dataType": "array",
+            "options": [
+              {"value": "INFO", "label": "Info"},
+              {"value": "WARNING", "label": "Warning"},
+              {"value": "ERROR", "label": "Error"},
+              {"value": "DEBUG", "label": "Debug"}
+            ],
+            "validations": {"required": true}
+          },
+          {
+            "name": "message",
+            "inputType": "textarea",
+            "dataType": "string",
+            "validations": {"required": true}
+          },
+          {
+            "name": "ip_address",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {}
+          },
+          {
+            "name": "user_agent",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {}
+          }
+        ]
+      },
+      "Campaigns": {
+        "attributes": [
+          {
+            "name": "name",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {"required": true}
+          },
+          {
+            "name": "description",
+            "inputType": "textarea",
+            "dataType": "string",
+            "validations": {}
+          },
+          {
+            "name": "budget",
+            "inputType": "number",
+            "dataType": "decimal128",
+            "validations": {"min": 0}
+          },
+          {
+            "name": "start_date",
+            "inputType": "date",
+            "dataType": "date",
+            "validations": {"required": true}
+          },
+          {
+            "name": "end_date",
+            "inputType": "date",
+            "dataType": "date",
+            "validations": {}
+          },
+          {
+            "name": "campaign-status",
+            "inputType": "select",
+            "dataType": "array",
+            "options": [
+              {"value": "PLANNED", "label": "Planned"},
+              {"value": "ACTIVE", "label": "Active"},
+              {"value": "PAUSED", "label": "Paused"},
+              {"value": "COMPLETED", "label": "Completed"},
+              {"value": "CANCELLED", "label": "Cancelled"}
+            ],
+            "validations": {"required": true}
+          }
+        ]
+      },
+      "Leads": {
+        "attributes": [
+          {
+            "name": "name",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {"required": true}
+          },
+          {
+            "name": "email",
+            "inputType": "email",
+            "dataType": "string",
+            "validations": {
+              "required": true,
+              "email": true
+            }
+          },
+          {
+            "name": "source",
+            "inputType": "select",
+            "dataType": "array",
+            "options": [
+              {"value": "WEBSITE", "label": "Website"},
+              {"value": "REFERRAL", "label": "Referral"},
+              {"value": "SOCIAL", "label": "Social Media"},
+              {"value": "EMAIL", "label": "Email Campaign"},
+              {"value": "OTHER", "label": "Other"}
+            ],
+            "validations": {"required": true}
+          },
+          {
+            "name": "lead-status",
+            "inputType": "select",
+            "dataType": "array",
+            "options": [
+              {"value": "NEW", "label": "New"},
+              {"value": "CONTACTED", "label": "Contacted"},
+              {"value": "QUALIFIED", "label": "Qualified"},
+              {"value": "LOST", "label": "Lost"},
+              {"value": "CONVERTED", "label": "Converted"}
+            ],
+            "validations": {"required": true}
+          }
+        ]
+      },
+      "Invoices": {
+        "attributes": [
+          {
+            "name": "invoice_number",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {"required": true}
+          },
+          {
+            "name": "amount",
+            "inputType": "number",
+            "dataType": "decimal128",
+            "validations": {
+              "required": true,
+              "min": 0
+            }
+          },
+          {
+            "name": "invoice-status",
+            "inputType": "select",
+            "dataType": "array",
+            "options": [
+              {"value": "DRAFT", "label": "Draft"},
+              {"value": "SENT", "label": "Sent"},
+              {"value": "PAID", "label": "Paid"},
+              {"value": "OVERDUE", "label": "Overdue"},
+              {"value": "CANCELLED", "label": "Cancelled"}
+            ],
+            "validations": {"required": true}
+          },
+          {
+            "name": "due_date",
+            "inputType": "date",
+            "dataType": "date",
+            "validations": {"required": true}
+          }
+        ]
+      },
+      "Expenses": {
+        "attributes": [
+          {
+            "name": "description",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {"required": true}
+          },
+          {
+            "name": "amount",
+            "inputType": "number",
+            "dataType": "decimal128",
+            "validations": {
+              "required": true,
+              "min": 0
+            }
+          },
+          {
+            "name": "category",
+            "inputType": "select",
+            "dataType": "array",
+            "options": [
+              {"value": "OFFICE", "label": "Office Supplies"},
+              {"value": "TRAVEL", "label": "Travel"},
+              {"value": "UTILITIES", "label": "Utilities"},
+              {"value": "MARKETING", "label": "Marketing"},
+              {"value": "OTHER", "label": "Other"}
+            ],
+            "validations": {"required": true}
+          },
+          {
+            "name": "expense_date",
+            "inputType": "date",
+            "dataType": "date",
+            "validations": {"required": true}
+          }
+        ]
+      },
+      "Reports": {
+        "attributes": [
+          {
+            "name": "title",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {"required": true}
+          },
+          {
+            "name": "reports_type",
+            "inputType": "select",
+            "dataType": "array",
+            "options": [
+              {"value": "SALES", "label": "Sales Report"},
+              {"value": "INVENTORY", "label": "Inventory Report"},
+              {"value": "FINANCIAL", "label": "Financial Report"},
+              {"value": "ANALYTICS", "label": "Analytics Report"}
+            ],
+            "validations": {"required": true}
+          },
+          {
+            "name": "format",
+            "inputType": "select",
+            "dataType": "array",
+            "options": [
+              {"value": "PDF", "label": "PDF"},
+              {"value": "EXCEL", "label": "Excel"},
+              {"value": "CSV", "label": "CSV"}
+            ],
+            "validations": {"required": true}
+          }
+        ]
+      },
+      "Roles": {
+        "attributes": [
+          {
+            "name": "name",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {"required": true}
+          },
+          {
+            "name": "description",
+            "inputType": "textarea",
+            "dataType": "string",
+            "validations": {}
+          },
+          {
+            "name": "role-status",
+            "inputType": "select",
+            "dataType": "array",
+            "options": [
+              {"value": "ACTIVE", "label": "Active"},
+              {"value": "INACTIVE", "label": "Inactive"}
+            ],
+            "validations": {"required": true}
+          }
+        ]
+      },
+      "Permissions": {
+        "attributes": [
+          {
+            "name": "name",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {"required": true}
+          },
+          {
+            "name": "description",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {}
+          },
+          {
+            "name": "permission-type",
+            "inputType": "select",
+            "dataType": "array",
+            "options": [
+              {"value": "CREATE", "label": "Create"},
+              {"value": "READ", "label": "Read"},
+              {"value": "UPDATE", "label": "Update"},
+              {"value": "DELETE", "label": "Delete"},
+              {"value": "MANAGE", "label": "Manage"}
+            ],
+            "validations": {"required": true}
+          },
+          {
+            "name": "permission-status",
+            "inputType": "select",
+            "dataType": "array",
+            "options": [
+              {"value": "ACTIVE", "label": "Active"},
+              {"value": "INACTIVE", "label": "Inactive"}
+            ],
+            "validations": {"required": true}
+          }
+        ]
+      },
+      "Categories": {
+        "attributes": [
+          {
+            "name": "name",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {"required": true}
+          },
+          {
+            "name": "slug",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {"required": true}
+          },
+          {
+            "name": "description",
+            "inputType": "textarea",
+            "dataType": "string",
+            "validations": {}
+          },
+          {
+            "name": "category-status",
+            "inputType": "select",
+            "dataType": "array",
+            "options": [
+              {"value": "ACTIVE", "label": "Active"},
+              {"value": "INACTIVE", "label": "Inactive"},
+              {"value": "ARCHIVED", "label": "Archived"}
+            ],
+            "validations": {"required": true}
+          }
+        ]
+      },
+      "Tags": {
+        "attributes": [
+          {
+            "name": "name",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {"required": true}
+          },
+          {
+            "name": "slug",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {"required": true}
+          },
+          {
+            "name": "tag-status",
+            "inputType": "select",
+            "dataType": "array",
+            "options": [
+              {"value": "ACTIVE", "label": "Active"},
+              {"value": "INACTIVE", "label": "Inactive"}
+            ],
+            "validations": {"required": true}
+          }
+        ]
+      },
+      "VariantMaster": {
+        "attributes": [
+          {
+            "name": "variant_type",
+            "inputType": "select",
+            "dataType": "array",
+            "options": [
+              {"value": "size", "label": "Size"},
+              {"value": "color", "label": "Color"},
+              {"value": "material", "label": "Material"},
+              {"value": "other", "label": "Other"}
+            ],
+            "validations": {"required": true}
+          },
+          {
+            "name": "variant_value",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {"required": true}
+          },
+          {
+            "name": "variant-status",
+            "inputType": "select",
+            "dataType": "array",
+            "options": [
+              {"value": "ACTIVE", "label": "Active"},
+              {"value": "INACTIVE", "label": "Inactive"}
+            ],
+            "validations": {"required": true}
+          }
+        ]
+      },
+      "VariantOptions": {
+        "attributes": [
+          {
+            "name": "variant_type",
+            "inputType": "select",
+            "dataType": "array",
+            "options": [
+              {"value": "size", "label": "Size"},
+              {"value": "color", "label": "Color"},
+              {"value": "material", "label": "Material"},
+              {"value": "other", "label": "Other"}
+            ],
+            "validations": {"required": true}
+          },
+          {
+            "name": "option_value",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {"required": true}
+          },
+          {
+            "name": "option-status",
+            "inputType": "select",
+            "dataType": "array",
+            "options": [
+              {"value": "ACTIVE", "label": "Active"},
+              {"value": "INACTIVE", "label": "Inactive"}
+            ],
+            "validations": {"required": true}
+          }
+        ]
+      },
+      "Notifications": {
+        "attributes": [
+          {
+            "name": "title",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {"required": true}
+          },
+          {
+            "name": "message",
+            "inputType": "textarea",
+            "dataType": "string",
+            "validations": {"required": true}
+          },
+          {
+            "name": "notification_type",
+            "inputType": "select",
+            "dataType": "array",
+            "options": [
+              {"value": "INFO", "label": "Information"},
+              {"value": "SUCCESS", "label": "Success"},
+              {"value": "WARNING", "label": "Warning"},
+              {"value": "ERROR", "label": "Error"}
+            ],
+            "validations": {"required": true}
+          },
+          {
+            "name": "priority",
+            "inputType": "select",
+            "dataType": "array",
+            "options": [
+              {"value": "LOW", "label": "Low"},
+              {"value": "MEDIUM", "label": "Medium"},
+              {"value": "HIGH", "label": "High"}
+            ],
+            "validations": {"required": true}
+          }
+        ]
+      },
+      "Sales": {
+        "attributes": [
+          {
+            "name": "sale_number",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {"required": true}
+          },
+          {
+            "name": "total_amount",
+            "inputType": "number",
+            "dataType": "decimal128",
+            "validations": {
+              "required": true,
+              "min": 0
+            }
+          },
+          {
+            "name": "discount_amount",
+            "inputType": "number",
+            "dataType": "decimal128",
+            "validations": {"min": 0}
+          },
+          {
+            "name": "tax_amount",
+            "inputType": "number",
+            "dataType": "decimal128",
+            "validations": {"min": 0}
+          },
+          {
+            "name": "final_amount",
+            "inputType": "number",
+            "dataType": "decimal128",
+            "validations": {
+              "required": true,
+              "min": 0
+            }
+          },
+          {
+            "name": "sale-status",
+            "inputType": "select",
+            "dataType": "array",
+            "options": [
+              {"value": "PENDING", "label": "Pending"},
+              {"value": "COMPLETED", "label": "Completed"},
+              {"value": "CANCELLED", "label": "Cancelled"},
+              {"value": "REFUNDED", "label": "Refunded"}
+            ],
+            "validations": {"required": true}
+          }
+        ]
+      },
+      "Payments": {
+        "attributes": [
+          {
+            "name": "payment_number",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {"required": true}
+          },
+          {
+            "name": "amount",
+            "inputType": "number",
+            "dataType": "decimal128",
+            "validations": {
+              "required": true,
+              "min": 0
+            }
+          },
+          {
+            "name": "payment_method",
+            "inputType": "select",
+            "dataType": "array",
+            "options": [
+              {"value": "CASH", "label": "Cash"},
+              {"value": "CREDIT_CARD", "label": "Credit Card"},
+              {"value": "DEBIT_CARD", "label": "Debit Card"},
+              {"value": "BANK_TRANSFER", "label": "Bank Transfer"},
+              {"value": "DIGITAL_WALLET", "label": "Digital Wallet"}
+            ],
+            "validations": {"required": true}
+          },
+          {
+            "name": "payment-status",
+            "inputType": "select",
+            "dataType": "array",
+            "options": [
+              {"value": "PENDING", "label": "Pending"},
+              {"value": "COMPLETED", "label": "Completed"},
+              {"value": "FAILED", "label": "Failed"},
+              {"value": "REFUNDED", "label": "Refunded"}
+            ],
+            "validations": {"required": true}
+          },
+          {
+            "name": "transaction_id",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {}
+          }
+        ]
+      },
+      "Analytics": {
+        "attributes": [
+          {
+            "name": "metric_name",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {"required": true}
+          },
+          {
+            "name": "metric_value",
+            "inputType": "number",
+            "dataType": "decimal128",
+            "validations": {"required": true}
+          },
+          {
+            "name": "metric_type",
+            "inputType": "select",
+            "dataType": "array",
+            "options": [
+              {"value": "SALES", "label": "Sales"},
+              {"value": "REVENUE", "label": "Revenue"},
+              {"value": "CUSTOMERS", "label": "Customers"},
+              {"value": "PRODUCTS", "label": "Products"},
+              {"value": "ORDERS", "label": "Orders"},
+              {"value": "CONVERSIONS", "label": "Conversions"}
+            ],
+            "validations": {"required": true}
+          },
+          {
+            "name": "time_period",
+            "inputType": "select",
+            "dataType": "array",
+            "options": [
+              {"value": "DAILY", "label": "Daily"},
+              {"value": "WEEKLY", "label": "Weekly"},
+              {"value": "MONTHLY", "label": "Monthly"},
+              {"value": "QUARTERLY", "label": "Quarterly"},
+              {"value": "YEARLY", "label": "Yearly"}
+            ],
+            "validations": {"required": true}
+          },
+          {
+            "name": "start_date",
+            "inputType": "date",
+            "dataType": "date",
+            "validations": {"required": true}
+          },
+          {
+            "name": "end_date",
+            "inputType": "date",
+            "dataType": "date",
+            "validations": {"required": true}
+          }
+        ]
+      },
+      "ProductCategories": {
+        "attributes": [
+          {
+            "name": "product_id",
+            "inputType": "number",
+            "dataType": "objectId",
+            "validations": {"required": true}
+          },
+          {
+            "name": "category_id",
+            "inputType": "number",
+            "dataType": "objectId",
+            "validations": {"required": true}
+          }
+        ]
+      },
+      "Media": {
+        "attributes": [
+          {
+            "name": "file_name",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {"required": true}
+          },
+          {
+            "name": "file_path",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {"required": true}
+          },
+          {
+            "name": "file_type",
+            "inputType": "text",
+            "dataType": "string",
+            "validations": {"required": true}
+          },
+          {
+            "name": "uploaded_at",
+            "inputType": "date",
+            "dataType": "date",
+            "validations": {}
+          }
+        ]
+      },
+      "MediaPosts": {
+        "attributes": [
+          {
+            "name": "media_id",
+            "inputType": "number",
+            "dataType": "objectId",
+            "validations": {"required": true}
+          },
+          {
+            "name": "post_id",
+            "inputType": "number",
+            "dataType": "objectId",
+            "validations": {}
+          },
+          {
+            "name": "page_id",
+            "inputType": "number",
+            "dataType": "objectId",
+            "validations": {}
+          }
+        ]
+      }
+    },
+    "dataTypes": [
+      "string", "number", "decimal128", "boolean", "date", "array"
+    ],
+    "validations": [
+      {
+        "group": "General",
+        "validations": [
+          { "name": "required", "label": "Required" },
+          { "name": "nullable", "label": "Nullable" },
+          { "name": "nonNullable", "label": "Non-nullable" }
+        ]
+      },
+      {
+        "group": "String",
+        "validations": [
+          { "name": "min", "label": "Min Length", "hasValue": true, "valueType": "number" },
+          { "name": "max", "label": "Max Length", "hasValue": true, "valueType": "number" },
+          { "name": "length", "label": "Length", "hasValue": true, "valueType": "number" },
+          { "name": "email", "label": "Email Format" },
+          { "name": "url", "label": "URL Format" },
+          { "name": "uuid", "label": "UUID Format" },
+          { "name": "includes", "label": "Includes Text", "hasValue": true, "valueType": "string" },
+          { "name": "regex", "label": "Regex Pattern", "hasValue": true, "valueType": "string" },
+          { "name": "startsWith", "label": "Starts With", "hasValue": true, "valueType": "string" },
+          { "name": "endsWith", "label": "Ends With", "hasValue": true, "valueType": "string" },
+          { "name": "trim", "label": "Trim Spaces" },
+          { "name": "toLowerCase", "label": "Convert to Lowercase" },
+          { "name": "toUpperCase", "label": "Convert to Uppercase" },
+          { "name": "datetime", "label": "Datetime Format" },
+          { "name": "date", "label": "Date Format" },
+          { "name": "time", "label": "Time Format" }
+        ]
+      },
+      {
+        "group": "Number",
+        "validations": [
+          { "name": "integer", "label": "Integer Only" },
+          { "name": "gt", "label": "Greater Than", "hasValue": true, "valueType": "number" },
+          { "name": "gte", "label": "Greater Than or Equal", "hasValue": true, "valueType": "number" },
+          { "name": "lt", "label": "Less Than", "hasValue": true, "valueType": "number" },
+          { "name": "lte", "label": "Less Than or Equal", "hasValue": true, "valueType": "number" },
+          { "name": "positive", "label": "Positive Number" },
+          { "name": "nonnegative", "label": "Non-negative Number" },
+          { "name": "negative", "label": "Negative Number" },
+          { "name": "nonpositive", "label": "Non-positive Number" },
+          { "name": "multipleOf", "label": "Multiple Of", "hasValue": true, "valueType": "number" },
+          { "name": "finite", "label": "Finite Number" },
+          { "name": "safe", "label": "Safe Integer" }
+        ]
+      },
+      {
+        "group": "Boolean",
+        "validations": [
+          { "name": "required", "label": "Required" },
+          { "name": "nullable", "label": "Nullable" }
+        ]
+      },
+      {
+        "group": "Date",
+        "validations": [
+          { "name": "required", "label": "Required" },
+          { "name": "minDate", "label": "Min Date", "hasValue": true, "valueType": "date" },
+          { "name": "maxDate", "label": "Max Date", "hasValue": true, "valueType": "date" },
+          { "name": "nullable", "label": "Nullable" }
+        ]
+      },
+      {
+        "group": "Array",
+        "validations": [
+          { "name": "required", "label": "Required" },
+          { "name": "minItems", "label": "Min Items", "hasValue": true, "valueType": "number" },
+          { "name": "maxItems", "label": "Max Items", "hasValue": true, "valueType": "number" },
+          { "name": "length", "label": "Exact Length", "hasValue": true, "valueType": "number" },
+          { "name": "nullable", "label": "Nullable" }
+        ]
+      }
+    ],
+    "inputTypes": {
+      "text": { "dataType": "string", "htmlType": "text" },
+      "email": { "dataType": "string", "htmlType": "email" },
+      "password": { "dataType": "string", "htmlType": "password" },
+      "number": { "dataType": "number", "htmlType": "number", "step": "any" },
+      "date": { "dataType": "date", "htmlType": "date" },
+      "checkbox": { "dataType": "array", "htmlType": "checkbox" },
+      "radio": { "dataType": "array", "htmlType": "radio", "enum": ["option1", "option2", "option3"] },
+      "select": { "dataType": "array", "htmlType": "select", "enum": ["option1", "option2", "option3"] },
+      "textarea": { "dataType": "string", "htmlType": "textarea" },
+      "tel": { "dataType": "string", "htmlType": "tel" },
+      "url": { "dataType": "string", "htmlType": "url" },
+      "color": { "dataType": "string", "htmlType": "color" },
+      "file": { "dataType": "string", "htmlType": "file", "accept": "*/*" }
+    }
+}
