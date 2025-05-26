@@ -15,6 +15,11 @@
       "label": "Custom Entities",
       "route": "#",
       "children": [
+        {
+          "icon": "entities",
+          "label": "Manage Entities",
+          "route": "/entities"
+        }
       ]
     }
   ]
